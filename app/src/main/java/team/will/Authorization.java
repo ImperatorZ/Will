@@ -51,6 +51,7 @@ public class Authorization extends Activity {
                     Toast.makeText(Authorization.this, "Введенные данные не верны", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(this, MainActivityAuthorization.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }
