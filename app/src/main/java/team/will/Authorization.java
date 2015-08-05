@@ -28,33 +28,31 @@ public class Authorization extends Activity {
     public void goAuth(View view) {
         if (mNameReg.getText().length() == 0) {
             Toast.makeText(Authorization.this, "Введите имя", Toast.LENGTH_SHORT).show();
-        } else {
-            if (mPassReg.getText().length() == 0) {
-                Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
-            } else {
-                if (mTelephoneReg.getText().length() == 12) {
-                    Toast.makeText(Authorization.this, "Введите номер телефона", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (mTelephoneReg.getText().length() < 12) {
-                        Toast.makeText(Authorization.this, "Вы не верно указали номер телефона", Toast.LENGTH_SHORT).show();
-                    } else {
-
-
-                        Intent intent = new Intent(this, Converter.class);
-                        startActivity(intent);
-                        Toast.makeText(Authorization.this, "Вы успешно зарегестрирвоались", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }
-
-
-            }
+            return;
         }
-
-
+        if (mPassReg.getText().length() == 0) {
+            Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (mTelephoneReg.getText().length() == 12) {
+            Toast.makeText(Authorization.this, "Вы правильно указали все данные", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, Converter.class);
+            startActivity(intent);
+        } else {
+            Toast.makeText(Authorization.this, "Вы не верно указали номер телефона", Toast.LENGTH_SHORT).show();
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
