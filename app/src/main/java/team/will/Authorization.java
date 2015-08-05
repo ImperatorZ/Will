@@ -26,20 +26,33 @@ public class Authorization extends Activity {
 
 
     public void goAuth(View view) {
-        if (mNameReg.getText().length() == 0) {
-            Toast.makeText(Authorization.this, "Введите имя", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (mPassReg.getText().length() == 0) {
+
+        if (mNameReg.getText().length() == 6 ){
             Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (mTelephoneReg.getText().length() == 12) {
-            Toast.makeText(Authorization.this, "Вы правильно указали все данные", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, Converter.class);
+            if (mPassReg.getText().length() == 4);
+            Toast.makeText(Authorization.this, "Укажите номер телефона", Toast.LENGTH_SHORT).show();
+            if (mTelephoneReg.getText().length() == 12);
+            Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
-        } else {
-            Toast.makeText(Authorization.this, "Вы не верно указали номер телефона", Toast.LENGTH_SHORT).show();
+        }else {
+
+            if (mNameReg.getText().length() == 0) {
+                Toast.makeText(Authorization.this, "Введите имя", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (mPassReg.getText().length() == 0) {
+                Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (mTelephoneReg.getText().length() == 12) {
+                Toast.makeText(Authorization.this, "Вы правильно указали все данные", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, Converter.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(Authorization.this, "Вы не верно указали номер телефона", Toast.LENGTH_SHORT).show();
+
+
+            }
         }
     }
 }
