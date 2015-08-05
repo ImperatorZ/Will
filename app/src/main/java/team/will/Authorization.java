@@ -52,6 +52,7 @@ public class Authorization extends Activity {
                     Intent intent = new Intent(this, MainActivityAuthorization.class);
                     startActivity(intent);
                     finish();
+                    setExitSharedElementCallback();
 
                 }
             }
