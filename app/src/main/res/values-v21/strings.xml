@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Melnica</string>
+    <string name="Dollars">В долларах</string>
+    <string name="Rub">В рублях</string>
+    <string name="Convert">Конвертировать</string>
+    <string name="Authorization">Авторизация</string>
+    <string name="Exit">Выход</string>
+    <string name="hint_name">Ваше имя</string>
+    <string name="hint_pass">Ваш пароль</string>
+    <string name="hint_number">Ваш телефон</string>
+
+
+    <string name="action_settings">Settings</string>
+</resources>
