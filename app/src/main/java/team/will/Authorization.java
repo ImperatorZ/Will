@@ -10,8 +10,12 @@ import android.widget.Toast;
 public class Authorization extends Activity {
 
     private EditText mNameReg;
-    private EditText mPassReg;
+    private EditText  mPassReg;
     private EditText mTelephoneReg;
+   String admin1="Somoff";
+    String admin2="Imperator";
+    String admin3="Kraft";
+    Integer p = 6310;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +31,12 @@ public class Authorization extends Activity {
 
     public void goAuth(View view) {
 
-        if (mNameReg.getText().length() == 6 ){
-            Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
-            if (mPassReg.getText().length() == 4);
-            Toast.makeText(Authorization.this, "Укажите номер телефона", Toast.LENGTH_SHORT).show();
-            if (mTelephoneReg.getText().length() == 12);
+        if ((mNameReg.getText().toString().equals(admin1) || mNameReg.getText().toString().equals(admin2) ||mNameReg.getText().toString().equals(admin3)) && mPassReg.getText().length() == 4 && mTelephoneReg.getText().length() == 12){
+
             Intent intent = new Intent(this, MenuActivity.class);
-            startActivity(intent);
-        }else {
+            startActivity(intent);}
+        else {
+
 
             if (mNameReg.getText().length() == 0) {
                 Toast.makeText(Authorization.this, "Введите имя", Toast.LENGTH_SHORT).show();
@@ -44,18 +46,18 @@ public class Authorization extends Activity {
                 Toast.makeText(Authorization.this, "Введите пароль", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (mTelephoneReg.getText().length() == 12) {
-                Toast.makeText(Authorization.this, "Вы правильно указали все данные", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, Converter.class);
-                startActivity(intent);
-            } else {
-                Toast.makeText(Authorization.this, "Вы не верно указали номер телефона", Toast.LENGTH_SHORT).show();
+            if (mTelephoneReg.getText().length() <= 12) {
+                Toast.makeText(Authorization.this, "Вы не правильно указали все данные", Toast.LENGTH_SHORT).show();
 
+            }
+
+
+
+                }
 
             }
         }
-    }
-}
+
 
 
 
