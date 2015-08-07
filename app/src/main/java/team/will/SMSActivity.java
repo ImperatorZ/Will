@@ -14,16 +14,14 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-/**
- * Created by Tiamat on 06.08.2015.
- */
+
 public class SMSActivity extends Activity {
 
     private EditText SmsReg;
     private NotificationManager nm;
     private final int NOTIFICATION_ID = 127;
     final Random random = new Random();
-    private int random1 = (random.nextInt(8999) + 1000);
+    final String str1 = String.valueOf(random.nextInt(8999) + 1000);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +41,7 @@ public class SMSActivity extends Activity {
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
                 .setContentTitle("Ваш уникальный уникальный код")
-                .setContentText("Ваш код : " + random1);
+                .setContentText("Ваш код : " + str1);
 
 
         Notification notification = builder.build();
@@ -55,7 +53,7 @@ public class SMSActivity extends Activity {
 
     public void NextActivity(View view) {
 
-        if (SmsReg.getText().toString().equals(random1)) {
+        if (SmsReg.getText().toString().equals(str1)) {
             Toast.makeText(this, "Код верен", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Код неверен", Toast.LENGTH_SHORT).show();
