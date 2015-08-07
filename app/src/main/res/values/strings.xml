@@ -4,4 +4,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="sms">Выслать смс сообщение</string>
+    <string name="next">Далее</string>
+    <string name="Donate">Донат</string>
+    <string name="Authors">Авторы</string>
+    <string name="Exit">Выход</string>
+    <string name="Somov"><a "vk.com">Сомов</a></string>
+
 </resources>
