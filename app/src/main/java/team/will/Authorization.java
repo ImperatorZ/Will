@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Authorization extends Activity {
+public class Authorization extends MenuActivity {
 
     private EditText mNameReg;
     private EditText  mPassReg;
@@ -33,7 +33,7 @@ public class Authorization extends Activity {
 
         if ((mNameReg.getText().toString().equals(admin1) || mNameReg.getText().toString().equals(admin2) ||mNameReg.getText().toString().equals(admin3)) && mPassReg.getText().length() == 4 && mTelephoneReg.getText().length() == 12){
 
-            Intent intent = new Intent(this, MenuActivity.class);
+            Intent intent = new Intent(this, SMSActivity.class);
             startActivity(intent);}
         else {
 

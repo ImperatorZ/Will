@@ -8,7 +8,7 @@ import android.view.View;
 /**
  * Created by asass on 04.08.2015.
  */
-public class MainActivityAuthorization extends Activity {
+public class MainActivityAuthorization extends MenuActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

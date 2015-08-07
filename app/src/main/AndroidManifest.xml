@@ -2,17 +2,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="team.will" >
 
-    <application>
-        <activity android:name=".Authorization">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="ANDROID.INTENT.ACTION.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".Converter"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MainActivityAuthorization"></activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".Authorization"></activity>
+        <activity android:name=".SMSActivity"></activity>
+        <activity android:name=".AnimationActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".Authors_activity"/>
+        <activity android:name=".Donate_activity"/>
+        <activity android:name=".CalculatorActivity"/>
+        <activity android:name="MainActivityAuthorization"/>
+
+
     </application>
 
 </manifest>

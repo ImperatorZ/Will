@@ -10,7 +10,7 @@ import android.widget.Toast;
 /**
  * Created by asass on 04.08.2015.
  */
-public class Converter extends Activity {
+public class Converter extends MenuActivity {
     private EditText mInputEditText;
 
 

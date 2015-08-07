@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 
-public class SMSActivity extends Activity {
+public class SMSActivity extends MenuActivity {
 
     private EditText SmsReg;
     private NotificationManager nm;
@@ -54,6 +54,8 @@ public class SMSActivity extends Activity {
     public void NextActivity(View view) {
 
         if (SmsReg.getText().toString().equals(str1)) {
+            Intent intent = new Intent(this,AnimationActivity.class);
+            startActivity(intent);
             Toast.makeText(this, "Код верен", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this, "Код неверен", Toast.LENGTH_SHORT).show();

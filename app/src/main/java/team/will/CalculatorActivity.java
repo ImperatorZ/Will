@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * Created by Tiamat on 06.08.2015.
  */
-public class CalculatorActivity extends Activity implements View.OnClickListener {
+public class CalculatorActivity extends MenuActivity implements View.OnClickListener {
     final int MENU_RESET_ID = 1;
     final int MENU_QUIT_ID = 2;
 
