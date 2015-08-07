@@ -2,6 +2,7 @@ package team.will;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -12,6 +13,7 @@ import android.widget.Toast;
  */
 public class Converter extends MenuActivity {
     private EditText mInputEditText;
+    private Toolbar toolbar;
 
 
     @Override
@@ -19,6 +21,8 @@ public class Converter extends MenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.converter_layout);
         mInputEditText = (EditText) findViewById(R.id.editTextConvert);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 

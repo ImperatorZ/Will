@@ -3,12 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:title="@string/Authors"
         android:orderInCategory="100"
         app:showAsAction="never"
         android:onClick="OnClickAuthors">
-
     </item>
+    <item android:id="@+id/Donate"
+        android:title="@string/Donate"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:onClick="OnClickDonate">
+    </item>
+    <item android:id="@+id/Exit"
+        android:title="@string/Exit"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        android:onClick="OnClickExit">
+    </item>
+
 
 
 </menu>

@@ -3,6 +3,7 @@ package team.will;
 import android.app.Activity;
 import android.app.Notification;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,8 @@ import android.widget.TextView;
  * Created by Tiamat on 06.08.2015.
  */
 public class CalculatorActivity extends MenuActivity implements View.OnClickListener {
+    private Toolbar toolbar;
+
     final int MENU_RESET_ID = 1;
     final int MENU_QUIT_ID = 2;
 
@@ -36,6 +39,9 @@ public class CalculatorActivity extends MenuActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculator_layout);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         etNum1 = (EditText) findViewById(R.id.etNum1);
         etNum2 = (EditText) findViewById(R.id.etNum2);
