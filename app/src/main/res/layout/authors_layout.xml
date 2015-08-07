@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Разработчики"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Баженов Владислав "
+        android:id="@+id/textView2"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vk.com/imperatorz"
+        android:id="@+id/radioButton"
+        android:autoLink="web"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Сомов Михаил"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/radioButton"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vk.com/som0ff"
+        android:autoLink="web"
+        android:id="@+id/radioButton2"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Шапошник Дмитрий"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/radioButton2"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vk.com/kraft_daaa"
+        android:autoLink="web"
+        android:id="@+id/radioButton3"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>
