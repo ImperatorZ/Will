@@ -1,5 +1,7 @@
 package team.will;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -59,36 +61,40 @@ public class MainActivity extends AppCompatActivity {
 
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.inbox:
-                        Toast.makeText(getApplicationContext(),"Inbox Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Вы открыли калькулятор",Toast.LENGTH_SHORT).show();
                         ContentFragment fragment = new ContentFragment();
                         android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.frame,fragment);
                         fragmentTransaction.commit();
+                        Intent intent = new Intent(getApplicationContext(), CalculatorActivity.class);
+                        startActivity(intent);
                         return true;
 
                     // For rest of the options we just show a toast on click
 
                     case R.id.starred:
-                        Toast.makeText(getApplicationContext(),"Stared Selected",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Вы открыли конвертер",Toast.LENGTH_SHORT).show();
+                        Intent converter = new Intent(getApplicationContext(), Converter.class);
+                        startActivity(converter);
                         return true;
-                    case R.id.sent_mail:
-                        Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.drafts:
-                        Toast.makeText(getApplicationContext(),"Drafts Selected",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.allmail:
-                        Toast.makeText(getApplicationContext(),"All Mail Selected",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.trash:
-                        Toast.makeText(getApplicationContext(),"Trash Selected",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.spam:
-                        Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
-                        return true;
-                    default:
-                        Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
-                        return true;
+                //    case R.id.sent_mail:
+                 //       Toast.makeText(getApplicationContext(),"Send Selected",Toast.LENGTH_SHORT).show();
+                //        return true;
+                //    case R.id.drafts:
+            //            Toast.makeText(getApplicationContext(),"Drafts Selected",Toast.LENGTH_SHORT).show();
+            //            return true;
+          //          case R.id.allmail:
+               //         Toast.makeText(getApplicationContext(),"All Mail Selected",Toast.LENGTH_SHORT).show();
+              //          return true;
+               //     case R.id.trash:
+               //         Toast.makeText(getApplicationContext(),"Trash Selected",Toast.LENGTH_SHORT).show();
+               //         return true;
+              //      case R.id.spam:
+               //         Toast.makeText(getApplicationContext(),"Spam Selected",Toast.LENGTH_SHORT).show();
+               //         return true;
+                 default:
+                     Toast.makeText(getApplicationContext(),"Somethings Wrong",Toast.LENGTH_SHORT).show();
+                     return true;
 
                 }
             }
@@ -136,6 +142,37 @@ public class MainActivity extends AppCompatActivity {
         Intent Authors = new Intent(this, Authors_activity.class);
         startActivity(Authors);
     }
+    public void OnClickDonate(MenuItem menu){
+        Intent Donate = new Intent(this,Donate_activity.class);
+        startActivity(Donate);
+    }
+    public void OnClickExit(MenuItem menu) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder
+                .setTitle("Выход")
+                .setMessage("Вы точно хотите выйти?")
+                .setCancelable(false)
+                .setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Спасибо вам", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Хнык", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        finish();
+                        System.exit(0);
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 
 
     @Override
@@ -153,9 +190,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToNewActivity(View view){
-        Intent authorization = new Intent(getApplicationContext(), Authorization.class);
-        startActivity(authorization);
-    }
+
+
 
 }
