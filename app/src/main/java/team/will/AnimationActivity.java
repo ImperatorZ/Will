@@ -1,7 +1,9 @@
 package team.will;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -15,11 +17,17 @@ public class AnimationActivity extends MenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.animation_layout);
 
-        ImageView sun = (ImageView)findViewById(R.id.sun);
-        Animation sunRise = AnimationUtils.loadAnimation(this,R.anim.sun_rise);
+        ImageView sun = (ImageView) findViewById(R.id.sun);
+        Animation sunRise = AnimationUtils.loadAnimation(this, R.anim.sun_rise);
 
         sun.startAnimation(sunRise);
 
+    }
+
+    public void StartApplication(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 
 }
-}
+

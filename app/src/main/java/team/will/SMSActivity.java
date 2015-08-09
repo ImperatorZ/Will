@@ -3,10 +3,12 @@ package team.will;
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -16,6 +18,8 @@ import java.util.Random;
 
 
 public class SMSActivity extends MenuActivity {
+
+    private Toolbar toolbar;
 
     private EditText SmsReg;
     private NotificationManager nm;
@@ -27,6 +31,8 @@ public class SMSActivity extends MenuActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sms_layout);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         SmsReg = (EditText) findViewById(R.id.editTextSms);
         nm = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
     }
@@ -41,10 +47,12 @@ public class SMSActivity extends MenuActivity {
                 .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
                 .setContentTitle("Ваш уникальный уникальный код")
-                .setContentText("Ваш код : " + str1);
+                .setContentText("Ваш код : " + str1)
+                .setPriority(Notification.PRIORITY_HIGH);
 
 
         Notification notification = builder.build();
+        notification.defaults = Notification.DEFAULT_ALL;
         nm.notify(NOTIFICATION_ID, notification);
 
 
