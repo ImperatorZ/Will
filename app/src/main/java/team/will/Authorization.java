@@ -20,6 +20,14 @@ public class Authorization extends MenuActivity {
     String admin2="Imperator";
     String admin3="Kraft";
     Integer p = 6310;
+    String parol="6310";
+    final String parol2 = String.valueOf(parol);
+    String numberVlad="+79615223485";
+    final String numberVlad2 = String.valueOf(numberVlad);
+    String numberMisha="+79615135913";
+    final String numberMisha2 = String.valueOf(numberMisha);
+    String numberDima="+79183689894";
+    final String numberDima2 = String.valueOf(numberDima);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +45,7 @@ public class Authorization extends MenuActivity {
 
     public void goAuth(View view) {
 
-        if ((mNameReg.getText().toString().equals(admin1) || mNameReg.getText().toString().equals(admin2) ||mNameReg.getText().toString().equals(admin3)) && mPassReg.getText().length() == 4 && mTelephoneReg.getText().length() == 12){
+        if ((mNameReg.getText().toString().equals(admin1) || mNameReg.getText().toString().equals(admin2) ||mNameReg.getText().toString().equals(admin3)) && mPassReg.getText().toString().equals(parol2) && (mTelephoneReg.getText().toString().equals(numberDima2) || mTelephoneReg.getText().toString().equals(numberMisha2) || mTelephoneReg.getText().toString().equals(numberVlad2))){
 
             Intent intent = new Intent(this, SMSActivity.class);
             startActivity(intent);}
@@ -53,7 +61,7 @@ public class Authorization extends MenuActivity {
                 return;
             }
             if (mTelephoneReg.getText().length() <= 12) {
-                Toast.makeText(Authorization.this, "Вы не правильно указали все данные", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Authorization.this, "Неверные данные или номер телефона", Toast.LENGTH_SHORT).show();
 
             }
 
