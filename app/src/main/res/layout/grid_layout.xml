@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:columnCount="2"
+    android:rowCount="3">
+
+<ImageButton
+    android:id="@+id/imageButtonCow"
+    android:background="@android:color/transparent"
+    android:src="@drawable/cow"
+    android:layout_width="164dp"
+    android:layout_height="164dp" />
+    <ImageButton
+        android:id="@+id/imageButtonChicken"
+        android:background="@android:color/transparent"
+        android:src="@drawable/chicken"
+        android:layout_width="161dp"
+        android:layout_height="161dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonCat"
+        android:background="@android:color/transparent"
+        android:src="@drawable/cat"
+        android:layout_width="179dp"
+        android:layout_height="179dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDuck"
+        android:background="@android:color/transparent"
+        android:src="@drawable/duck"
+        android:layout_width="176dp"
+        android:layout_height="176dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSheep"
+        android:background="@android:color/transparent"
+        android:src="@drawable/sheep"
+        android:layout_width="183dp"
+        android:layout_height="183dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDog"
+        android:background="@android:color/transparent"
+        android:src="@drawable/dog"
+        android:layout_width="197dp"
+        android:layout_height="197dp" />
+</GridLayout>
